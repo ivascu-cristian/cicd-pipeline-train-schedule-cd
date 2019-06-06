@@ -17,6 +17,9 @@ pipeline {
                     app = docker.build("civascu/train-schedule")
                     app.inside {
                         sh 'echo $(curl localhost:8080)'
+                        sh 'echo $(whoami)'
+                        sh 'echo $(pwd)'
+                        sh 'echo $(docker ps)'
                     }
                 }
             }
